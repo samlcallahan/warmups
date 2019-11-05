@@ -32,11 +32,13 @@ mask = relationships.text.apply(lambda x: contains_list_word(x, drop_words))
 
 relationships.drop(relationships[mask].index, inplace=True)
 
+sns.color_palette('muted')
+
 X = relationships[['f_age', 'm_age']]
-kmeans = KMeans(n_clusters=3)
+kmeans = KMeans(n_clusters=6)
 kmeans.fit(X)
 relationships['cluster'] = kmeans.labels_
 plt.figure(figsize=(12, 9))
-sns.scatterplot(x='f_age', y='m_age', data=relationships, hue='cluster', alpha=0.2, palette='terrain')
+sns.scatterplot(x='f_age', y='m_age', data=relationships, hue='cluster', alpha=0.2, palette='tab20b')
 plt.scatter(x=kmeans.cluster_centers_[:, 0], y=kmeans.cluster_centers_[:, 1], marker='x', s=2000, c='black')
 plt.show()
