@@ -13,7 +13,7 @@ def get_probs(n, p):
     results = {}
     results['half'] = 1 - (inv ** (n / 2))
     results['all_but_one'] = inv * (p ** (n - 1))
-    results['all'] = inv ** n
+    results['all'] = p ** n
     return results
 
 probs = {}
