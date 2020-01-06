@@ -4,17 +4,6 @@ import scipy.stats as stats
 # Binomial
 
 # Calculate all the requested probabilities.
-# 10 subjects, at least 5 remain
-1 - (.1 ** 5) # .9999
-
-# 10 subjects, only 1 leaves
-.1 * (.9 ** 9) # .0387
-
-# 10 subjects, all stay
-.9 ** 10 # .3487
-
-# 20 subjects, at least 10 remain
-1 - (.1 ** 10) # .9999999999
 
 p_list = [.9, .8, .7]
 n_list = [10, 20]
